@@ -53,6 +53,13 @@ const vector<string> TESTFILES = {
         "InsertNominal4.txt",
         "InsertOverwrite.txt",
         "InsertRotateLeft.txt",
+        "RemoveEmpty.txt",
+        "RemoveNominal.txt",
+        "RemoveNominal2.txt",
+        "RemoveRotateLeft.txt",
+        "RemoveRotateRight.txt",
+        "RemoveTargetNotFound.txt",
+        "RemoveTest1.txt",
 };
 
 void printOverallResultsForAllFiles(map<string, bool>);
@@ -102,8 +109,7 @@ int main(int argc, char* argv[]) {
         for (pair<char, int> cmd : cmds) {
             cout << endl;
             if (cmd.first == '+') {
-                cout << BLUE << "INSERTING: "
-                     << "(" << cmd.second << ", " << cmd.second << ")" << RESET << endl;
+                cout << BLUE << "INSERTING: " << cmd.second << ", " << cmd.second << RESET << endl;
                 m.insert(make_pair(cmd.second, cmd.second));
                 bst.insert(make_pair(cmd.second, cmd.second));
                 avl.insert(make_pair(cmd.second, cmd.second));
@@ -176,4 +182,3 @@ bool doKeyCheck(AVLTree<Key, Value>& avl, BinarySearchTree<Key, Value>& bst, map
     }
     return flag;
 }
-
